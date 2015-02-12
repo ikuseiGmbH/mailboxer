@@ -14,9 +14,10 @@ class Mailboxer::MessageMailer < Mailboxer::BaseMailer
   def new_message_email(message,receiver)
     @message  = message
     @receiver = receiver
+    @sender = message.sender
     set_subject(message)
     mail :to => receiver.send(Mailboxer.email_method, message),
-         :subject => t('mailboxer.message_mailer.subject_new', :subject => @subject),
+         :subject => t('mailboxer.message_mailer.subject_new'),
          :template_name => 'new_message_email'
   end
 
@@ -24,9 +25,10 @@ class Mailboxer::MessageMailer < Mailboxer::BaseMailer
   def reply_message_email(message,receiver)
     @message  = message
     @receiver = receiver
+    @sender = message.sender
     set_subject(message)
     mail :to => receiver.send(Mailboxer.email_method, message),
-         :subject => t('mailboxer.message_mailer.subject_reply', :subject => @subject),
+         :subject => t('mailboxer.message_mailer.subject_reply'),
          :template_name => 'reply_message_email'
   end
 end
