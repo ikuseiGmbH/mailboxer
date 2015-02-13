@@ -1,7 +1,7 @@
 en:
   mailboxer:
     message_mailer:
-      subject_new: "Mailboxer new message"
-      subject_reply: "Mailboxer new reply"
+      subject_new: "You have a new private message on policytransfer.metropolis.org"
+      subject_reply: "You have a new reply on policytransfer.metropolis.org"
     notification_mailer:
       subject: "Mailboxer new notification"
